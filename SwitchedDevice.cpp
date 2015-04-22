@@ -42,3 +42,10 @@ byte SwitchedDevice::switchOff()
     return 0;
 }
 
+byte SwitchedDevice::switchState()
+{
+  if ( state() )
+    return( switchOff() );
+  else
+    return( switchOn() );
+}
