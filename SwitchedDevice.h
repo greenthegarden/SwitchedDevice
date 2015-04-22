@@ -16,12 +16,13 @@
 class SwitchedDevice
 {
 public:
-  SwitchedDevice(byte pin = 0, boolean default_state = OFF);
+  SwitchedDevice(byte pin = 0, boolean initial_state = OFF);
 private:
   byte    _pin;
-  boolean _default_state;
+  boolean _initial_state;
 public:
   byte state();
+  byte switchState();
   byte switchOn();
   byte switchOff();
 };
