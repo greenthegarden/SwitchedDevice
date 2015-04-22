@@ -8,13 +8,13 @@
 #include "SwitchedDevice.h"
 
 
-SwitchedDevice::SwitchedDevice(byte pin, boolean default_state)
+SwitchedDevice::SwitchedDevice(byte pin, boolean initial_state)
 {
   _pin = pin;
-  _default_state = default_state;
+  _initial_state = initial_state;
 
   pinMode(this->_pin, OUTPUT);
-  digitalWrite(this->_pin, this->_default_state);
+  digitalWrite(this->_pin, this->_initial_state);
 }
 
 byte SwitchedDevice::pin()
