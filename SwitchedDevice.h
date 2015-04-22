@@ -22,9 +22,9 @@ private:
   boolean _initial_state;
 public:
   byte state();
-  byte switchState();
   byte switchOn();
   byte switchOff();
+  byte switchState();
 };
 
 
