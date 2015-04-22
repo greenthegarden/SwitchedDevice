@@ -1,12 +1,20 @@
-#include "SwitchedDevice.h"
+#include <SwitchedDevice.h>
 
-typedef SwitchedDevice Relay;  // a relay is a switchedDevice
 
+// a relay is a switchedDevice
+typedef SwitchedDevice Relay; 
+
+
+// define an individual relay
 Relay relay1(1);
-Relay relay2(2);
-Relay relay3(3);
-Relay relay4(4);
 
+
+// define an array of relays
+Relay relays[] = { Relay(2, ON),
+                   Relay(3, OFF),
+                   Relay(4, OFF),
+                   Relay(5, ON),
+                  };
 
 
 /*--------------------------------------------------------------------------------------
@@ -23,6 +31,18 @@ void setup()
     Serial.println(" ON");
   else
     Serial.println(" OFF");
+    
+  for (byte idx=0; idx<(sizeof(relays)/sizeof(Relay)); idx++)
+  {
+   Serial.print("Relay ");
+   Serial.print(idx);
+   Serial.print(" is ");
+   if (relay1.state())
+     Serial.println(" ON");
+   else
+     Serial.println(" OFF")
+  }
+  
 }
 
 /*--------------------------------------------------------------------------------------
