@@ -21,6 +21,7 @@ private:
   byte    _pin;
   boolean _initial_state;
 public:
+  byte pin();
   byte state();
   byte switchOn();
   byte switchOff();
