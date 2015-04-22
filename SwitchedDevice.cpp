@@ -17,6 +17,11 @@ SwitchedDevice::SwitchedDevice(byte pin, boolean default_state)
   digitalWrite(this->_pin, this->_default_state);
 }
 
+byte SwitchedDevice::pin()
+{
+  return(this->_pin);
+}
+
 byte SwitchedDevice::state()
 {
   return(digitalRead(this->_pin));
