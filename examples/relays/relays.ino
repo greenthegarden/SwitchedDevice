@@ -26,7 +26,9 @@ void setup()
                    
   Serial.begin(9600);
   
-  Serial.print("relay1 is ");
+  Serial.print("relay1 is connected to pin ");
+  Serial.print(relay1.pin());
+  Serial.print(" and is ");
   if (relay1.state())
     Serial.println(" ON");
   else
@@ -36,8 +38,10 @@ void setup()
   {
    Serial.print("Relay[");
    Serial.print(idx);
-   Serial.print("] is ");
-   if (relay1.state())
+   Serial.print("] is connected to pin ");
+   Serial.print(relays[idx].pin());
+   Serial.print(" and is ");
+   if (relays[idx].state())
      Serial.println(" ON");
    else
      Serial.println(" OFF");
