@@ -32,6 +32,18 @@ unsigned long SwitchedDevice::last_off()
   return(this->_last_off);
 }
 
+#if USE_TIME
+time_t SwitchedDevice::last_time_on()
+{
+  return(this->_last_time_on);
+}
+
+time_t SwitchedDevice::last_time_off()
+{
+  return(this->_last_time_off);
+}
+#endif
+
 byte SwitchedDevice::state()
 {
   return(digitalRead(this->_pin));
@@ -45,6 +57,9 @@ byte SwitchedDevice::switchOn()
     if ( state() )
     {
       this->_last_on = millis();
+#if USE_TIME
+      this->_last_time_on = now();
+#endif
       return 1;
     }
     else
@@ -61,6 +76,9 @@ byte SwitchedDevice::switchOff()
     if ( !state() )
     {
       this->_last_off = millis();
+#if USE_TIME
+      this->_last_time_off = now();
+#endif
       return 1;
     }
     else
