@@ -24,6 +24,8 @@ private:
   unsigned long _last_off = 0;
 public:
   byte pin();
+  unsigned long last_on();
+  unsigned long last_off();
   byte state();
   byte switchOn();
   byte switchOff();
