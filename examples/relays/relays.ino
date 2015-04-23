@@ -17,6 +17,10 @@ Relay relays[] = { Relay(2, ON),
                   };
 
 
+const int interval  = 2000;           // 2 seconds
+unsigned long previousMillis = 0;
+
+
 /*--------------------------------------------------------------------------------------
  setup()
  Called by the Arduino framework once, before the main loop begins
@@ -56,5 +60,17 @@ void setup()
  --------------------------------------------------------------------------------------*/
 void loop()
 {
-  // nothing to do here!!
+  unsigned long currentMillis = millis();
+ 
+  if(currentMillis - previousMillis >= interval) {
+    // save the last time you blinked the LED 
+    previousMillis = currentMillis;
+    
+    relays[0].switchState();
+    Serial.print("Relay[0] switched to state ");
+    (relays[0].state()) ? Serial.print("ON") : Serial.print("OFF") ;
+    Serial.print(" at ");
+    (relays[0].state()) ? Serial.print(relays[0].time_on()) : Serial.print(relays[0].time_off()) ;
+  }
+
 }
