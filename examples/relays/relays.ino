@@ -70,7 +70,11 @@ void loop()
     Serial.print("Relay[0] switched to state ");
     (relays[0].state()) ? Serial.print("ON") : Serial.print("OFF") ;
     Serial.print(" at ");
-    (relays[0].state()) ? Serial.print(relays[0].last_on()) : Serial.print(relays[0].last_off()) ;
+    (relays[0].state()) ? Serial.print(relays[0].last_on()) : Serial.print(relays[0].last_off());
+#if USE_TIME
+    Serial.print(" time ");
+    (relays[0].state()) ? Serial.print(relays[0].last_time_on()) : Serial.print(relays[0].last_time_off());
+#endif
     Serial.println();
   }
 
