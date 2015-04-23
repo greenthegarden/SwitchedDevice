@@ -13,7 +13,7 @@
 #define OFF LOW
 
 
-#define USE_TIME false
+#define USE_TIME true
 
 #if USE_TIME
 #include "Time.h"
