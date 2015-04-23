@@ -20,6 +20,8 @@ public:
 private:
   byte    _pin;
   boolean _initial_state;
+  unsigned long _last_on = 0;
+  unsigned long _last_off = 0;
 public:
   byte pin();
   byte state();
