@@ -8,7 +8,7 @@
 #include "SwitchedDevice.h"
 
 
-SwitchedDevice::SwitchedDevice(byte pin, boolean initial_state) :
+SwitchedDevice::SwitchedDevice(byte pin, byte initial_state) :
 _last_on = 0, _last_off = 0
 {
     _pin = pin;
@@ -18,7 +18,7 @@ _last_on = 0, _last_off = 0
     digitalWrite(this->_pin, this->_initial_state);
 }
 
-SwitchedDevice::SwitchedDevice(byte pin, boolean initial_state, byte master_pin) :
+SwitchedDevice::SwitchedDevice(byte pin, byte initial_state, byte master_pin) :
 _last_on = 0, _last_off = 0
 {
     _pin = pin;
