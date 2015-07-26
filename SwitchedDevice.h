@@ -13,40 +13,27 @@
 #define OFF LOW
 
 
-#define USE_TIME true
-
-#if USE_TIME
-#include <Time.h>
-#endif
-
-
 class SwitchedDevice
 {
 public:
-  SwitchedDevice(byte pin = 0, boolean initial_state = OFF);
+    SwitchedDevice(byte pin = 0, boolean initial_state = OFF);
+    SwitchedDevice(byte pin = 0, boolean initial_state = OFF, byte master_pin);
 private:
-  byte    _pin;
-  boolean _initial_state;
-  unsigned long _last_on = 0;
-  unsigned long _last_off = 0;
-#if USE_TIME
-  time_t _last_time_on = 0;
-  time_t _last_time_off = 0;
-#endif
+    byte    _pin;
+    byte    _master_pin;
+    boolean _initial_state;
+    unsigned long _last_on;
+    unsigned long _last_off;
 public:
-  byte pin();
-  unsigned long last_on();
-  unsigned long last_off();
-#if USE_TIME
-  time_t last_time_on();
-  time_t last_time_off();
-#endif
-  byte state();
-  byte switchOn();
-  byte switchOff();
-  byte switchState();
+    byte pin();
+    byte master_pin();
+    unsigned long last_on();
+    unsigned long last_off();
+    byte state();
+    byte switchOn();
+    byte switchOff();
+    byte switchState();
 };
 
 
 #endif
-
