@@ -9,7 +9,7 @@
 
 
 SwitchedDevice::SwitchedDevice(byte pin, byte initial_state)
-    : _pin(pin), _initial_state(initia_state), _last_on(0), _last_off(0)
+    : _pin(pin), _initial_state(initia_state), _mater_pin(-1), _last_on(0), _last_off(0)
 {
 //    _pin = pin;
 //    _initial_state = initial_state;
