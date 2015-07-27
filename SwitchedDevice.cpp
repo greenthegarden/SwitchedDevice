@@ -8,23 +8,9 @@
 #include "SwitchedDevice.h"
 
 
-//SwitchedDevice::SwitchedDevice(byte pin, byte initial_state)
-//    : _pin(pin), _initial_state(initia_state), _mater_pin(-1), _last_on(0), _last_off(0)
-//{
-//    _pin = pin;
-//    _initial_state = initial_state;
-
-//    pinMode(this->_pin, OUTPUT);
-//    digitalWrite(this->_pin, this->_initial_state);
-//}
-
 SwitchedDevice::SwitchedDevice(byte pin, byte initial_state, byte master_pin)
-    : _pin(pin), _initial_state(initia_state), _master_pin(master_pin), _last_on(0), _last_off(0)
+    : _pin(pin), _initial_state(initial_state), _master_pin(master_pin), _last_on(0), _last_off(0)
 {
-//    _pin = pin;
-//    _initial_state = initial_state;
-//    _master_pin = master_pin;
-
     pinMode(this->_pin, OUTPUT);
     digitalWrite(this->_pin, this->_initial_state);
 }
