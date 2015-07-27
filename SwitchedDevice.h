@@ -16,7 +16,7 @@
 class SwitchedDevice
 {
 public:
-    SwitchedDevice(byte pin = 0, byte initial_state = OFF);
+//    SwitchedDevice(byte pin = 0, byte initial_state = OFF);
     SwitchedDevice(byte pin = 0, byte initial_state = OFF, byte master_pin = -1);
 private:
     byte _pin;
