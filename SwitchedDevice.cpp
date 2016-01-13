@@ -10,6 +10,9 @@
 
 SwitchedDevice::SwitchedDevice(byte pin, byte initial_state, byte master_pin)
     : _pin(pin), _initial_state(initial_state), _master_pin(master_pin), _last_on(0), _last_off(0)
+{}
+
+void SwitchedDevice::init()
 {
     pinMode(this->_pin, OUTPUT);
     digitalWrite(this->_pin, this->_initial_state);

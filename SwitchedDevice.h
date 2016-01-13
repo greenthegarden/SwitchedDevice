@@ -24,6 +24,7 @@ private:
     unsigned long _last_on;
     unsigned long _last_off;
 public:
+    void init();
     byte pin();
     byte master_pin();
     unsigned long last_on();
