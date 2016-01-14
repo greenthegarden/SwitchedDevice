@@ -20,27 +20,27 @@ void SwitchedDevice::init()
 
 byte SwitchedDevice::pin()
 {
-    return(this->_pin);
+    return this->_pin;
 }
 
 byte SwitchedDevice::master_pin()
 {
-    return(this->_master_pin);
+    return this->_master_pin;
 }
 
 unsigned long SwitchedDevice::last_on()
 {
-    return(this->_last_on);
+    return this->_last_on;
 }
 
 unsigned long SwitchedDevice::last_off()
 {
-    return(this->_last_off);
+    return this->_last_off;
 }
 
 byte SwitchedDevice::state()
 {
-    return(digitalRead(this->_pin));
+    return digitalRead(this->_pin);
 }
 
 byte SwitchedDevice::switchOn()
@@ -50,12 +50,10 @@ byte SwitchedDevice::switchOn()
         if (state()) {
             this->_last_on = millis();
             return 1;
-        }
-        else {
+        } else {
             return 0;
         }
-    }
-    else {
+    } else {
         return 1;
     }
     return 0;
@@ -68,12 +66,10 @@ byte SwitchedDevice::switchOff()
         if (!state()) {
             this->_last_off = millis();
             return 1;
-        }
-        else {
+        } else {
             return 0;
         }
-    }
-    else {
+    } else {
         return 1;
     }
     return 0;
@@ -82,9 +78,8 @@ byte SwitchedDevice::switchOff()
 byte SwitchedDevice::switchState()
 {
     if (state()) {
-        return(switchOff());
-    }
-    else {
-        return(switchOn());
+      return switchOff();
+    } else {
+      return switchOn();
     }
 }
