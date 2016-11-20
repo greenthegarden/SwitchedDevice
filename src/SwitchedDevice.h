@@ -33,6 +33,7 @@ public:
     byte switchOn();
     byte switchOff();
     byte switchState();
+    void printDeviceInfo();
 };
 
 
