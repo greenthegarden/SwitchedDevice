@@ -10,10 +10,10 @@ SwitchedDevice	KEYWORD1
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-state		KEYWORD2
+state	KEYWORD2
 switchOn	KEYWORD2
 switchOff	KEYWORD2
-switchState KEYWORD2
+switchState	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
